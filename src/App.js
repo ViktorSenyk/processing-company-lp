@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header";
+import styled from "styled-components";
+import HomeBlock from "./components/HomeBlock";
+import YourChoiceBlock from "./components/YourChoiceBlock";
+import LearnMoreBlock from "./components/LearnMoreBlock";
+import SimpleWays from "./components/SimpleWays";
+import CreateBlock from "./components/CreateBlock";
+import InvestBlock from "./components/InvestBlock";
+import HelpFindingBlock from "./components/HelpFindingBlock";
+import SendBlock from "./components/SendBlock";
+import Footer from "./components/Footer";
+import {Fade} from "react-reveal";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container>
+          <Header/>
+          <main>
+              <HomeBlock/>
+              <Fade>
+                  <YourChoiceBlock/>
+                  <LearnMoreBlock/>
+                  <SimpleWays/>
+                  <CreateBlock/>
+                  <InvestBlock/>
+                  <HelpFindingBlock/>
+                  <SendBlock/>
+              </Fade>
+          </main>
+          <Footer/>
+      </Container>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  max-width: 1110px;
+  margin: 0 auto 169px;
+  position: relative;
+`
